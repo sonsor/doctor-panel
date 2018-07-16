@@ -1,5 +1,14 @@
+/**
+ * 
+ */
 class Response
 {
+	/**
+	 * [onSuccess description]
+	 * @param  {[type]} data     [description]
+	 * @param  {[type]} dispatch [description]
+	 * @return {[type]}          [description]
+	 */
 	onSuccess(data, dispatch) {
 		const type = data.headers['Action-Type'];
 		dispatch({
@@ -8,6 +17,11 @@ class Response
 		});
 	}
 
+	/**
+	 * [onError description]
+	 * @param  {[type]} err [description]
+	 * @return {[type]}     [description]
+	 */
 	onError(err) {
 		console.log(err);
 	}

@@ -7,12 +7,23 @@ import {
 	UPDATE_DOCTOR
 } from '../constants';
 
-class Doctor extends BaseAction
+/**
+ * 
+ */
+class Doctor extends Action
 {
+	/**
+	 * [findAll description]
+	 * @return {[type]} [description]
+	 */
 	findAll() {
 		return this.request().get('/doctor', {}, GET_DOCTORS);
 	}
 
+	/**
+	 * [findOne description]
+	 * @return {[type]} [description]
+	 */
 	findOne() {
 		findAll() {
 		return this.request().get('/doctor', {}, GET_DOCTOR);
@@ -20,5 +31,3 @@ class Doctor extends BaseAction
 }
 
 export default new Doctor();
-
-.com/keithamu?stab=repositories

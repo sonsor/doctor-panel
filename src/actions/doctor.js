@@ -1,4 +1,4 @@
-import { BaseAction } from './BaseAction';
+import { Action } from '../core/Base/Action';
 import {
 	ADD_DOCTOR,
 	REMOVE_DOCTOR,
@@ -10,13 +10,15 @@ import {
 class Doctor extends BaseAction
 {
 	findAll() {
-		return this.get('/doctor', {}, GET_DOCTORS);
+		return this.request().get('/doctor', {}, GET_DOCTORS);
 	}
 
 	findOne() {
 		findAll() {
-		return this.get('/doctor', {}, GET_DOCTOR);
+		return this.request().get('/doctor', {}, GET_DOCTOR);
 	}
 }
 
 export default new Doctor();
+
+.com/keithamu?stab=repositories

@@ -1,27 +1,19 @@
 import axios from 'axios';
 
-export class BaseAction
+class Request
 {
+	constructor(response) {
+		this.response = response;
+	}
+
 	getRequest(data) {
 		return (dispatch) => {
 			axios(data)
 			.then((data) => {
-				this.onSuccess(data, dispatch);
+				this.response.onSuccess(data, dispatch);
 			})
-			.catch(this.onError)
+			.catch(this.response.onError)
 		}
-	}
-
-	onSuccess(data, dispatch) {
-		const type = data.headers['Action-Type'];
-		dispatch({
-			type: type,
-			payload: data.data
-		});
-	}
-
-	onError(err) {
-		console.log(err);
 	}
 
 	get(url, data, type) {
@@ -89,3 +81,5 @@ export class BaseAction
 		return this.getRequest(data);
 	}
 }
+
+export Request;

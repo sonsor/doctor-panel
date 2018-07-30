@@ -3,7 +3,7 @@ import axios from 'axios';
 /**
  * 
  */
-class Request {
+export class Request {
 
 	/**
 	 * [constructor description]
@@ -13,7 +13,7 @@ class Request {
     constructor(response) {
         this.response = response;
     }
-
+    
     /**
      * [getRequest description]
      * @param  {[type]} data [description]
@@ -40,8 +40,7 @@ class Request {
 
         let data = {
             url: url,
-            data: ,
-            data,
+            data: data,
             method: 'GET',
             headers: {
                 'X-Action-Type': type
@@ -62,8 +61,7 @@ class Request {
         let data = {
             url: url,
             method: 'POST',
-            data: ,
-            data,
+            data: data,
             headers: {
                 'X-Action-Type': type
             }
@@ -83,8 +81,7 @@ class Request {
         let data = {
             url: url,
             method: 'PUT',
-            data: ,
-            data,
+            data: data,
             headers: {
                 'X-Action-Type': type
             }
@@ -104,8 +101,7 @@ class Request {
         let data = {
             url: url,
             method: 'PATCH',
-            data: ,
-            data,
+            data: data,
             headers: {
                 'X-Action-Type': type
             }
@@ -125,8 +121,7 @@ class Request {
         let data = {
             url: url,
             method: 'DELETE',
-            data: ,
-            data,
+            data: data,
             headers: {
                 'X-Action-Type': type
             }
@@ -134,5 +129,3 @@ class Request {
         return this.getRequest(data);
     }
 }
-
-export Request;
